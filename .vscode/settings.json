@@ -17,6 +17,6 @@
     // Controls nesting of files in the Explorer.
     "explorer.fileNesting.patterns": {
         "package.json": "*.json, .gitignore",
-        "CodeWithHarry_Tutorial.md": "LICENSE, *.md"
+        "CodeWithHarry_Tutorial.md": "LICENSE, *.md, .gitignore"
     }
 }

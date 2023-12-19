@@ -1,10 +1,10 @@
 ## React.Js installation:
 - Step-01:
-  - `npx create-react-app my-app`
-  - `cd my-app`
+  - `npx create-react-app text-utils`
+  - `cd text-utils`
   - `npm start`
 - Alternative step:
-  - `npx create-react-app my-app .`
+  - `npx create-react-app text-utils .`
 
 
 React Router: https://v5.reactrouter.com/web/guides/quick-start
