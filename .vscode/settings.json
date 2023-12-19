@@ -16,7 +16,7 @@
     "explorer.fileNesting.expand": false,
     // Controls nesting of files in the Explorer.
     "explorer.fileNesting.patterns": {
-        "package.json": "*.json",
-        "CodeWithHarry_Tutorial.md": "LICENSE, *.md,  .gitignore"
+        "package.json": "*.json, .gitignore",
+        "CodeWithHarry_Tutorial.md": "LICENSE, *.md"
     }
 }
