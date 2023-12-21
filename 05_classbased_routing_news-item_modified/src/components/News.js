@@ -4,6 +4,9 @@ import Spinner from './Spinner';
 import sample_news from '../assets/images/sample_news.avif';
 import apiConfig from '../config/apiConfig';
 
+import InfiniteScroll from 'react-infinite-scroll-component';
+
+
 export class News extends Component {
     static defaultProps = {
         country: 'in',
@@ -110,10 +113,9 @@ export class News extends Component {
         let { mode } = this.props;
         return (
             <div className={`container my-2 p-5 bg-${mode.status} text-${mode.textColor} shadow`}>
+                {/* {(this.state.loading || !this.state.articles) && <Spinner mode={mode} />} */}
                 <h1 className="text-center">Top Headline of {this.formatText(this.props.country)} {this.formatText(this.props.category)} NEWS</h1>
-                {/* // Show Spinner */}
-                {(this.state.loading || !this.state.articles) && <Spinner mode={mode} />}
-
+                
                 <div className="row my-3">
                     {!this.state.loading && this.state.articles && this.state.articles.map((ele) => {
                         return <div className="col-md-4" key={ele.url}>
