@@ -1,9 +1,4 @@
 const apiConfig = {
-    apiKey: {
-        mkTestIndia: '77a7e9ccfa3b45ab9ad0de094d743442',
-        onlineBindu: '06e84ab2346543bdbcc8814c580f658c',
-        currentlyUsedKey: '77a7e9ccfa3b45ab9ad0de094d743442',
-    },
     apiInfo: {
         getNews: {
             url: "https://newsapi.org/v2/top-headlines",

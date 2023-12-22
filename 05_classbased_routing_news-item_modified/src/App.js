@@ -15,21 +15,20 @@ import {
 import LoadingBar from 'react-top-loading-bar';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      mode: {
-        status: 'light',
-        textColor: 'dark',
-        btnColor: 'success'
-      },
-      location: {
-        language: 'English',
-        country: 'India'
-      },
-      loadingBarProgress: 0
-    }
+  apiKey= process.env.REACT_APP_NEWS_API1
+  state = {
+    mode: {
+      status: 'light',
+      textColor: 'dark',
+      btnColor: 'success'
+    },
+    location: {
+      language: 'English',
+      country: 'India'
+    },
+    loadingBarProgress: 0
   }
+
   toggleMode = (_status = 'light') => {
     this.setState({
       mode: {
@@ -45,7 +44,7 @@ export default class App extends Component {
   }
 
   setLoadingBarProgress = (_progress) => {
-    this.setState({loadingBarProgress: _progress})
+    this.setState({ loadingBarProgress: _progress })
   }
 
   render() {
@@ -54,17 +53,17 @@ export default class App extends Component {
       <>
         <Router>
           <Navbar mode={this.state.mode} toggleMode={this.toggleMode} toggleLanguage={this.toggleLanguage} />
-          <LoadingBar color='#f11946' height={4} progress={this.state.loadingBarProgress}/>
+          <LoadingBar color='#f11946' height={4} progress={this.state.loadingBarProgress} />
           <div className="container">
             <Routes>
               {/* Key is required to Remount same Component for different route */}
-              <Route exact path="/" element={<News setProgress={this.setLoadingBarProgress} key={`general_${country}_${language}`} mode={this.state.mode} category="general" country={country} lang={language} />} />
-              <Route exact path="/business" element={<News setProgress={this.setLoadingBarProgress} key={`business_${country}_${language}`} mode={this.state.mode} category={"business"} country={country} lang={language} />} />
-              <Route exact path="/entertainment" element={<News setProgress={this.setLoadingBarProgress} key={`entertainment_${country}_${language}`} mode={this.state.mode} category="entertainment" country={country} lang={language} />} />
-              <Route exact path="/health" element={<News setProgress={this.setLoadingBarProgress} key={`health_${country}_${language}`} mode={this.state.mode} category={"health"} country={country} lang={language} />} />
-              <Route exact path="/science" element={<News setProgress={this.setLoadingBarProgress} key={`science_${country}_${language}`} mode={this.state.mode} category={"science"} country={country} lang={language} />} />
-              <Route exact path="/sports" element={<News setProgress={this.setLoadingBarProgress} key={`sports_${country}_${language}`} mode={this.state.mode} category={"sports"} country={country} lang={language} />} />
-              <Route exact path="/technology" element={<News setProgress={this.setLoadingBarProgress} key={`technology_${country}_${language}`} mode={this.state.mode} category={"technology"} country={country} lang={language} />} />
+              <Route exact path="/" element={<News setProgress={this.setLoadingBarProgress} apiKey={this.apiKey} key={`general_${country}_${language}`} mode={this.state.mode} category="general" country={country} lang={language} />} />
+              <Route exact path="/business" element={<News setProgress={this.setLoadingBarProgress} apiKey={this.apiKey} key={`business_${country}_${language}`} mode={this.state.mode} category={"business"} country={country} lang={language} />} />
+              <Route exact path="/entertainment" element={<News setProgress={this.setLoadingBarProgress} apiKey={this.apiKey} key={`entertainment_${country}_${language}`} mode={this.state.mode} category="entertainment" country={country} lang={language} />} />
+              <Route exact path="/health" element={<News setProgress={this.setLoadingBarProgress} apiKey={this.apiKey} key={`health_${country}_${language}`} mode={this.state.mode} category={"health"} country={country} lang={language} />} />
+              <Route exact path="/science" element={<News setProgress={this.setLoadingBarProgress} apiKey={this.apiKey} key={`science_${country}_${language}`} mode={this.state.mode} category={"science"} country={country} lang={language} />} />
+              <Route exact path="/sports" element={<News setProgress={this.setLoadingBarProgress} apiKey={this.apiKey} key={`sports_${country}_${language}`} mode={this.state.mode} category={"sports"} country={country} lang={language} />} />
+              <Route exact path="/technology" element={<News setProgress={this.setLoadingBarProgress} apiKey={this.apiKey} key={`technology_${country}_${language}`} mode={this.state.mode} category={"technology"} country={country} lang={language} />} />
 
               <Route exact path="/about" element={<About mode={this.state.mode} />} />
             </Routes>

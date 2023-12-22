@@ -47,11 +47,12 @@ export class News extends Component {
     }
 
     async getApiData(pageInfo = { page: 1, pageSize: this.state.pageSize }) {
+        console.warn('APIKEY: ', this.props.apiKey);
         this.setLoadingBarProgress(10); // Progress 10%
         let apiDetails = apiConfig.apiInfo.getNews;
         // update query details
         let queryDetails = apiDetails.query;
-        queryDetails.apiKey = apiConfig.apiKey.currentlyUsedKey;
+        queryDetails.apiKey = this.props.apiKey;
         queryDetails.country = apiConfig.countries[this.formatText(this.props.country)];
         queryDetails.language = apiConfig.languages[this.formatText(this.props.lang)];
         queryDetails.category = this.props.category;
@@ -62,8 +63,8 @@ export class News extends Component {
         let reqUrl = `${apiDetails.url}?${new URLSearchParams(queryDetails).toString()}`;
         console.log('reqUrl: ', reqUrl);
         let parseData = null;
-        let data = await fetch(reqUrl, apiDetails.reqOption);
-        parseData = await data.json();
+        // let data = await fetch(reqUrl, apiDetails.reqOption);
+        // parseData = await data.json();
         this.setLoadingBarProgress(50); // Progress 50%
         let removedData = 0;
         if (parseData) {
@@ -107,7 +108,7 @@ export class News extends Component {
         let { mode } = this.props;
         return (
             <>
-                <h1 className="text-center">Top Headline of {this.formatText(this.props.country)} {this.formatText(this.props.category)} NEWS</h1>
+                <h1 className={`text-center my-1 p-5 bg-${mode.status} text-${mode.textColor} shadow`}>Top Headline of {this.formatText(this.props.country)} {this.formatText(this.props.category)} NEWS</h1>
 
                 <InfiniteScroll
                     dataLength={this.state.articles.length}
@@ -120,7 +121,7 @@ export class News extends Component {
                         </p>
                     }
                 >
-                    <div className={`container my-2 p-5 bg-${mode.status} text-${mode.textColor} shadow`}>
+                    <div className={`container p-4 bg-${mode.status} text-${mode.textColor} shadow`}>
                         <div className="row my-3">
                             {this.state.articles && this.state.articles.map((ele) => {
                                 return <div className="col-md-4" key={ele.url}>
