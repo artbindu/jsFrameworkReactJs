@@ -12,7 +12,7 @@ export class News extends Component {
         super(props);
         this.state = {
             page: 0,
-            pageSize: 9,
+            pageSize: 5,
             totalPage: 0,
             loading: true,
             // articles: this.createTestingData(10), // dummy data
@@ -42,7 +42,12 @@ export class News extends Component {
         // this.getApiData();
     }
 
+    setLoadingBarProgress(_status = 10) {
+        this.props.setProgress(_status);
+    }
+
     async getApiData(pageInfo = { page: 1, pageSize: this.state.pageSize }) {
+        this.setLoadingBarProgress(10); // Progress 10%
         let apiDetails = apiConfig.apiInfo.getNews;
         // update query details
         let queryDetails = apiDetails.query;
@@ -57,8 +62,9 @@ export class News extends Component {
         let reqUrl = `${apiDetails.url}?${new URLSearchParams(queryDetails).toString()}`;
         console.log('reqUrl: ', reqUrl);
         let parseData = null;
-        // let data = await fetch(reqUrl, apiDetails.reqOption);
-        // parseData = await data.json();
+        let data = await fetch(reqUrl, apiDetails.reqOption);
+        parseData = await data.json();
+        this.setLoadingBarProgress(50); // Progress 50%
         let removedData = 0;
         if (parseData) {
             removedData = parseData.articles.filter(x => x.content === "[Removed]")?.length
@@ -75,6 +81,8 @@ export class News extends Component {
                 "articles": this.state.articles
             };
         }
+        this.setLoadingBarProgress(80); // Progress 80%
+
         let totalPage = (parseData && parseData.totalResults) ? (Math.ceil((parseData.totalResults- removedData) / this.state.pageSize)) : 1;
         this.setState({
             loading: false,
@@ -86,6 +94,7 @@ export class News extends Component {
         });
         console.log(`current page: ${pageInfo.page} & totalPage: ${totalPage}, totalResults: ${parseData.totalResults}`);
         console.warn('all Data: ', parseData.articles);
+        this.setLoadingBarProgress(100); // Progress 100%
     }
     fetchMoreData = () => {
         console.warn('fetchMoreData call to getApiData');

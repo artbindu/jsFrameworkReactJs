@@ -36,8 +36,14 @@ export class NewsItem extends Component {
         return (
             <div className='my-3 shadow'>
                 <div className={`card bg-${this.props.mode.status} text-${this.props.mode.textColor} border border-${this.props.mode.textColor} shadow`} style={{ minHeight: "480px", maxHeight: "480px" }}>
+
                     <img src={imageUrl ? imageUrl : sample_news} className={`card-img-top border border-${this.props.mode.textColor}`} alt="..." style={{ height: "200px" }} />
-                    <span className="badge bg-danger">{source.name ? source.name : 'NEWS'}</span>
+                    {/* <span className="badge bg-danger">{source.name ? source.name : 'NEWS'}</span> */}
+                    <div style={{ display: "flex", justifyContent: "flex-end", position: "absolute", right: "0" }}>
+                        <span class="badge rounded-pill bg-danger">
+                            {source.name ? source.name : 'NEWS'}
+                        </span>
+                    </div>
                     <div className="card-body">
                         <div style={{ height: "200px" }}>
                             <h5 className="card-title">{this.showFormattedText(title, 50)}

@@ -38,7 +38,7 @@
 ## 4. Class based Component:
 1. Update component: 
       - **infinite-scroll**: [Video 35](https://www.youtube.com/watch?v=yLox5lhwaEU&list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt&index=35) : react-infinite-scroll-component
-
+      - **Top-loading-bar**: [Video 36](https://www.youtube.com/watch?v=j_Gk58cOB2A&list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt&index=36) : react-top-loading-bar
 
 
 ### Difference of Class Based Component, Class based Component
