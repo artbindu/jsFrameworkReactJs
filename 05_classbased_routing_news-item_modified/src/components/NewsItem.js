@@ -19,6 +19,10 @@ export class NewsItem extends Component {
     showAuthor(_auth, _dt) {
         let d = _dt ? new Date(_dt) : null;
         d = d.toDateString() + " " + d.toLocaleTimeString().replace(/\:\d{2}\s/g, ' ');
+        // Remove URL from Author
+        _auth = _auth ? _auth.replace(/(www|http:|https:)+[^\s]+[\w]/gi, '') : '';
+        // Short Multiple Authors
+        _auth = (_auth && (_auth.split(/\,/g)?.length > 1 || _auth.split(/\s/g)?.length > 2)) ? _auth.split(/\,/g).map(x => x.replace(/(?<=[a-z])[a-z]+\s/gi, '. ')).join(',') : _auth;
         return (_auth ? `By ${_auth}` : 'Publish') + (d ? ` on ${d}` : '')
     }
 

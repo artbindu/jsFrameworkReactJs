@@ -21,7 +21,7 @@ export class Navbar extends Component {
         let val = event.target?.value.replace(/\s+/g, '');
         // let _lang = val.match(/(?<=\-)[a-z]+/gi)?.toString();
         // let _country = val.match(/[a-z]+(?=\-)/gi)?.toString();
-        this.props.toggleLanguage({country: val.split('-')[0], language: val.split('-')[1] });
+        this.props.toggleLanguage({ country: val.split('-')[0], language: val.split('-')[1] });
     }
 
 
@@ -29,11 +29,11 @@ export class Navbar extends Component {
         let { mode } = this.props;
         return (
             <div>
-                <nav className={`navbar navbar-expand-lg navbar-${mode.status} ${mode.status === 'dark' ? 'bg-dark' : ''}`}  
-                    style={{backgroundColor: mode.status === 'light' ? '#04707A' : ''}}>
+                <nav className={`navbar navbar-expand-lg navbar-${mode.status} ${mode.status === 'dark' ? 'bg-dark' : ''}`}
+                    style={{ backgroundColor: mode.status === 'light' ? '#04707A' : '' }}>
                     <div className="container-fluid">
                         <Link className="navbar-brand text-light fw-bold" to="/">News Portal</Link>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -50,8 +50,8 @@ export class Navbar extends Component {
                             </ul>
                         </div>
 
-                        <select onChange={this.handleChange} className={`form-select shadow border border-2 border-${mode.textColor}`} 
-                            aria-label="Default select example" style={{maxWidth: "180px", float: "left"}}>
+                        <select onChange={this.handleChange} className={`form-select shadow border border-2 border-${mode.textColor} me-1 shadow btn-group btn-group-lg`}
+                            aria-label="Default select example" style={{ maxWidth: "180px", float: "left" }}>
                             <option selected value="india - english">India - English</option>
                             <option value="USA - English">USA - English</option>
                             <option value="UK - English">UK - English</option>
@@ -60,10 +60,10 @@ export class Navbar extends Component {
                             <option value="Italy - Italian">Italy - Italian</option>
                         </select>
 
-                        <div className={`form-check form-switch border border-2 border-${mode.textColor} mx-3 shadow btn-group btn-group-lg`} 
-                            aria-label="Default select example" style={{backgroundColor: "white", paddingBlock:"4px"}}>
+                        <div className={`form-check form-switch border border-2 border-${mode.textColor} me-5 shadow btn-group btn-group-lg`}
+                            aria-label="Default select example" style={{ backgroundColor: "white", paddingBlock: "6px" }}>
                             &nbsp;&nbsp;
-                            <input className="form-check-input p-2" type="checkbox" id="flexSwitchCheckDefault"
+                            <input className="form-check-input p-2 border border-2 border-success" type="checkbox" id="flexSwitchCheckDefault"
                                 onClick={this.changeMode} />
                             <label className={`form-check-label text-${mode.textColor}`} htmlFor="flexSwitchCheckDefault">
                                 <strong className="">&nbsp;&nbsp;{mode.status === 'light' ? "🌞" : "🌛"}&nbsp;&nbsp;</strong>

@@ -63,8 +63,8 @@ export class News extends Component {
         let reqUrl = `${apiDetails.url}?${new URLSearchParams(queryDetails).toString()}`;
         console.log('reqUrl: ', reqUrl);
         let parseData = null;
-        // let data = await fetch(reqUrl, apiDetails.reqOption);
-        // parseData = await data.json();
+        let data = await fetch(reqUrl, apiDetails.reqOption);
+        parseData = await data.json();
         this.setLoadingBarProgress(50); // Progress 50%
         let removedData = 0;
         if (parseData) {
@@ -84,7 +84,7 @@ export class News extends Component {
         }
         this.setLoadingBarProgress(80); // Progress 80%
 
-        let totalPage = (parseData && parseData.totalResults) ? (Math.ceil((parseData.totalResults- removedData) / this.state.pageSize)) : 1;
+        let totalPage = (parseData && parseData.totalResults) ? (Math.ceil((parseData.totalResults - removedData) / this.state.pageSize)) : 1;
         this.setState({
             loading: false,
             page: pageInfo.page,
@@ -108,7 +108,9 @@ export class News extends Component {
         let { mode } = this.props;
         return (
             <>
-                <h1 className={`text-center my-1 p-5 bg-${mode.status} text-${mode.textColor} shadow`}>Top Headline of {this.formatText(this.props.country)} {this.formatText(this.props.category)} NEWS</h1>
+                <h1 className={`text-center my-1 p-5 bg-${mode.status} text-${mode.textColor} shadow`}>
+                    Top Headline of {this.formatText(this.props.country)} {this.formatText(this.props.category)} NEWS
+                </h1>
 
                 <InfiniteScroll
                     dataLength={this.state.articles.length}
@@ -116,8 +118,8 @@ export class News extends Component {
                     hasMore={this.state.articles.length !== this.state.totalResult}
                     loader={<Spinner mode={mode} />}
                     endMessage={
-                    <p className="p-3" style={{ textAlign:'center', backgroundColor: "green"}}>
-                        <b>All News are covered</b>
+                        <p className="p-3" style={{ textAlign: 'center', backgroundColor: "green" }}>
+                            <b>All News are covered</b>
                         </p>
                     }
                 >
