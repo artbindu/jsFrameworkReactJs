@@ -36,7 +36,9 @@
    - **componentWillUnmount( )**: called just before the component is unmounted and destroyed.
 
 ## 4. Class based Component:
-1. Update component: [Video 35](https://www.youtube.com/watch?v=yLox5lhwaEU&list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt&index=35) --- continue
+1. Update component: 
+      - **infinite-scroll**: [Video 35](https://www.youtube.com/watch?v=yLox5lhwaEU&list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt&index=35) : react-infinite-scroll-component
+
 
 
 ### Difference of Class Based Component, Class based Component

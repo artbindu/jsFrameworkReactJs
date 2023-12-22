@@ -1,7 +1,8 @@
 const apiConfig = {
     apiKey: {
         mkTestIndia: '77a7e9ccfa3b45ab9ad0de094d743442',
-        onlineBindu: '06e84ab2346543bdbcc8814c580f658c'
+        onlineBindu: '06e84ab2346543bdbcc8814c580f658c',
+        currentlyUsedKey: '77a7e9ccfa3b45ab9ad0de094d743442',
     },
     apiInfo: {
         getNews: {
@@ -10,7 +11,7 @@ const apiConfig = {
                 country: 'in',
                 category: 'business',
                 language: 'en',
-                apiKey: '77a7e9ccfa3b45ab9ad0de094d743442',
+                apiKey: 'xxxxxxxxxxx',
                 page: 0,
                 pageSize: 0
             },
@@ -24,7 +25,7 @@ const apiConfig = {
                 category: 'general',
                 language: 'en',
                 country: 'in',
-                apiKey: '77a7e9ccfa3b45ab9ad0de094d743442'
+                apiKey: 'xxxxxxxxxxxxx'
             },
             reqOptions: {
                 method: 'GET'
