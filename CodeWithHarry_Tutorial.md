@@ -30,7 +30,7 @@
    - **Update** - Growth of your component
    - **Unmount** - Death of your component
 - Method in React COmponent Lifecycle
-   - **render( )**: used to render HTML of the component in react. Cann't modify state.
+   - **render( )**: used to render HTML of the component in react. Can't modify state.
    - **componentDidMount( )**: method runs after the component output has been rendered to the DOM
    - **componentDidUpdate( )**: method is invoke as soon as the updating happens. Will update if props or state is change
    - **componentWillUnmount( )**: called just before the component is unmounted and destroyed.
@@ -39,7 +39,20 @@
 1. Update component: 
       - **infinite-scroll**: [Video 35](https://www.youtube.com/watch?v=yLox5lhwaEU&list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt&index=35) : react-infinite-scroll-component
       - **Top-loading-bar**: [Video 36](https://www.youtube.com/watch?v=j_Gk58cOB2A&list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt&index=36) : react-top-loading-bar
+      - **React Custom Envs**: [Video 37](https://www.youtube.com/watch?v=fg_Rc5cBAK8&list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt&index=37) : .env.local config
 
+## 5. React Hooks: - [Video 38](https://www.youtube.com/watch?v=esrFnNV5Btc&list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt&index=38)
+- Features of Class based components in function based components
+- It allows you to use state and other React features without writing a class
+- Hooks are the function which "hoot into" React state and lifecycle features from function components.
+- Commonly used React Hooks:
+  - **useState**: update state and initialize value of state. Use multiple time to update state.
+  - **useEffect**: Perform side effect of Component Update. When updating any Component then if we want to change anything (like: alert, update some text etc.), we can do that with useEffect.
+  - **useContext**: When need to pass any data (props) for nested Component Tree childs, then useContext used to available globally that data.
+  - **useRef**: Return a mutable reference object. It's basically a holder, which carry any DOM element.
+
+## 6. Change React Class to React Function
+  - [Video 39-40](https://www.youtube.com/watch?v=aSSVGdVk6fo&list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt&index=39)
 
 ### Difference of Class Based Component, Class based Component
 

@@ -1,0 +1,32 @@
+{
+    "status": "ok",
+    "totalResults": 2,
+    "articles": [
+        {
+            "source": {
+                "id": "the-times-of-india",
+                "name": "The Times of India"
+            },
+            "author": "TOI Sports Desk",
+            "title": "From Cummins to Brook, top cricketers anticipate big bids in IPL 2024 auction - IndiaTimes",
+            "description": "Cricket News: The Indian Premier League (IPL) auction will take place in Dubai on Tuesday, featuring top cricketers with bids starting from a base price of Rs 2 cro",
+            "url": "https://timesofindia.indiatimes.com/sports/cricket/ipl/top-stories/from-cummins-to-brook-top-cricketers-anticipate-big-bids-in-ipl-2024-auction/articleshow/106079288.cms",
+            "urlToImage": "https://static.toiimg.com/thumb/msid-106080036,width-1070,height-580,imgsize-57834,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
+            "publishedAt": "2023-12-18T06:28:42Z",
+            "content": "Arshdeep, Avesh on fire as India crush Proteas in 1st ODI"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Hindustan Times"
+            },
+            "author": "HT Sports Desk",
+            "title": "‘KL Rahul bhai told…’: How India captain helped Arshdeep stage stunning comeback - Hindustan Times",
+            "description": "Arshdeep Singh credited KL Rahul for helping him rewrite history in the 1st ODI between India and South Africa. | Cricket",
+            "url": "https://www.hindustantimes.com/cricket/kl-rahul-bhai-told-me-how-india-captain-helped-arshdeep-singh-stage-stunning-comeback-india-vs-south-africa-1st-odi-101702867724417.html",
+            "urlToImage": "https://www.hindustantimes.com/ht-img/img/2023/12/18/1600x900/CRICKET-ODI-RSA-IND-68_1702869733733_1702869765576.jpg",
+            "publishedAt": "2023-12-18T03:23:55Z",
+            "content": "Returning to the Indian side for the series opener against South Africa, KL Rahul guided the Rohit Sharma-less side to an impressive win over the hosts on Sunday. Pacers Arshdeep Singh and Avesh Khan… [+2601 chars]"
+        }
+    ]
+}
